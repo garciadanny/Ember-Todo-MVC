@@ -1,5 +1,7 @@
 # Ember.js
 
+Notes taken while going through the [ember.js tutorial](http://emberjs.com/guides/getting-started/)
+
 ## Routing
 
 When a router isn't specified to map a url to a template, ember will create a default `IndexRoute` with a RouteName of `index` that maps to `/`.
