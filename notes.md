@@ -461,3 +461,16 @@ The `completed` computed property depends on the `isCompleted` property of each 
 The `hasCompleted` computed property depends on the `completed` computed property.
 
 	property('completed')
+
+## Handy Helper Methods
+
+	filter()
+	filterBy()
+	invoke()
+	isEvery()
+	setEach()
+	get()
+	set()
+	send()
+	deleteRecord()
+	save()
