@@ -48,7 +48,19 @@ Todos.TodosController = Ember.ArrayController.extend({
 
   allAreDone: function(key, value) {
     // key is the name of the property that this computed property depends on. i.e. `model.isCompleted`
-    // return `true` if we have any todos & they're all completed
-    return !!this.get('length') && this.isEvery('isCompleted');
+
+    // This conditional provides getter/setter functionality
+    // If no value was given (i.e during DOM construction) return whether they're all completed
+    // Else, set all the todos to either complete/incomplete (based on user input)
+    // and return the value given. True if checked, False if unchecked.
+    if (value === undefined) {
+      // return `true` if we have any todos & they're all completed
+      return !!this.get('length') && this.isEvery('isCompleted');
+    }
+    else {
+      this.setEach('isCompleted', value);
+      this.invoke('save');
+      return value;
+    }
   }.property('@each.isCompleted')
 });
